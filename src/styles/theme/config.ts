@@ -1,6 +1,6 @@
-import { ThemeConfig } from "@chakra-ui/theme";
+import { ThemeConfig } from '@chakra-ui/theme'
 
 export const config: ThemeConfig = {
-  initialColorMode: "light",
+  initialColorMode: 'light',
   useSystemColorMode: false,
 }
