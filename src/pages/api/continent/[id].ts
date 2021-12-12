@@ -1,20 +1,22 @@
-export default function userHandler(req, res) {
+import { NextApiRequest, NextApiResponse } from 'next'
+
+import { continents } from 'mock'
+import { Continent } from 'types'
+
+const handler = (request: NextApiRequest, response: NextApiResponse<Continent | undefined>) => {
   const {
-    query: { id, name },
+    query: { id },
     method,
-  } = req
+  } = request
 
   switch (method) {
     case 'GET':
-      // Get data from your database
-      res.status(200).json({ id, name: `User ${id}` })
-      break
-    case 'PUT':
-      // Update or create data in your database
-      res.status(200).json({ id, name: name || `User ${id}` })
+      response.status(200).json(continents.find(continent => continent.id === id))
       break
     default:
-      res.setHeader('Allow', ['GET', 'PUT'])
-      res.status(405).end(`Method ${method} Not Allowed`)
+      response.setHeader('Allow', ['GET'])
+      response.status(405).end(`Method ${method} Not Allowed`)
   }
 }
+
+export default handler

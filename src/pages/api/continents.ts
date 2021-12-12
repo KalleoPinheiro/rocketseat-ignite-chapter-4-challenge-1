@@ -1,5 +1,10 @@
-const users = [{ id: 1 }, { id: 2 }, { id: 3 }]
+import { NextApiRequest, NextApiResponse } from 'next'
 
-export default function handler(req, res) {
-  res.status(200).json(users)
+import { continents } from 'mock'
+import { Continent } from 'types'
+
+const handler = (_: NextApiRequest, response: NextApiResponse<Continent[]>) => {
+  response.status(200).json(continents)
 }
+
+export default handler

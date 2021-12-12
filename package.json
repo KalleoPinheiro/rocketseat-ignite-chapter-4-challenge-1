@@ -18,10 +18,12 @@
     "swiper": "^7.3.1"
   },
   "devDependencies": {
+    "@types/faker": "^5.5.9",
     "@types/node": "^16.11.12",
     "@types/react": "^17.0.37",
     "eslint": "^8.4.1",
     "eslint-config-next": "^12.0.7",
+    "faker": "^5.5.3",
     "typescript": "^4.5.3"
   }
 }

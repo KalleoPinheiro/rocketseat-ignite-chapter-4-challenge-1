@@ -1,21 +1,32 @@
-import { mode, StyleFunctionProps } from '@chakra-ui/theme-tools'
+import { StyleFunctionProps } from '@chakra-ui/theme-tools'
 
 export const styles = {
   global: (props: StyleFunctionProps) => ({
+    '*': {
+      margin: '0',
+      padding: '0',
+      boxSizing: 'border-box',
+    },
+    'html, body, #__next': {
+      width: '100vw',
+      height: '100vh',
+    },
     body: {
       fontFamily: "'Poppins', sans-serif",
-      color: mode('brand.text', 'whiteAlpha.900')(props),
-      bg: mode('white', 'gray.800')(props),
+      color: 'brand.text',
+      bg: 'white',
+      width: '100%',
+      height: '100%',
     },
     '.swiper': {
       width: 'auto',
-      height: '100%',
-      margin: '52px 100px 40px',
+      height: 'auto',
     },
     '.swiper-slide': {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      cursor: 'pointer',
       img: {
         display: 'block',
         width: '100%',
